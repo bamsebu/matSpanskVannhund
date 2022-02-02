@@ -8,7 +8,10 @@
         <link rel="manifest" href="https://bamsebu.github.io/matSpanskVannhund/favicons/site.webmanifest">
 
         <h1>Matmengde</h1>
-        <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="numberMultiplier.js"></script>
 
 
@@ -17,11 +20,16 @@
     <body>
         <label for="fodselsDato">Fødselsdag</label>
         <input type="date" value="2021-10-24" id="fodselsDato" name="fodselsDato">
+        <br>
         <label for="Vektinput">Vekt i kg</label>
         <input type="number" id="Vektinput" name="Vektinput" min="1" max="50">
         <input type="button" name="clickbtn" value="Send inn" onclick="add_number()">
+        <br>
         <label for="Matmengde">Mat i gram:</label>
-        <output id="Matmengde" for="Vektinput">
+        <input type="text" id="Matmengde" name="Matmengde">
+        <br>
+        <label for="Vom">Mengde vom i gram</label>
+        <input type="number" id="Vom" name="Vom">
         
     </body>
 
