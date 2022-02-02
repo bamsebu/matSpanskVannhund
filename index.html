@@ -12,37 +12,48 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
+        <link rel="stylesheet" href="stylesheet.css"/>
 
 
     </head>
 
     <body>
+<div>
         <label for="fodselsDato">Fødselsdag:</label>
         <br>
         <input type="date" value="2021-10-24" id="fodselsDato" name="fodselsDato">
+</div>
+<div>
         <br>
         <label for="Alder">Alder i måneder:</label>
         <br>
         <input type="number" id="Alder" name="Alder">
+</div>
+<div>
         <br>
         <label for="Vektinput">Hundens vekt i kg:</label>
         <br>
         <input type="number" id="Vektinput" name="Vektinput" min="1" max="50">
         <input type="button" id="clickbtn" name="clickbtn" value="Send inn" onclick="add_number()">
+</div>
+<div>
         <br>
         <label for="Matmengde">Mat i gram:</label>
         <br>
         <input type="text" id="Matmengde" name="Matmengde" readonly>
+</div>
+<div>
         <br>
         <label for="Vom">Mengde vom i gram:</label>
         <br>
         <input type="number" id="Vom" name="Vom" min="1" max="1000" value="250">
+</div>
+<div>
         <br>
         <label for="Torrfor">Mengde tørrfor i gram:</label>
         <br>
         <input type="text" id="Torrfor" name="Torrfor" readonly>
-        
+</div>
         
         <script src="numberMultiplier.js"></script>
     </body>
