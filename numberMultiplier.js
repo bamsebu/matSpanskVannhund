@@ -34,5 +34,6 @@ function add_number() {
     var vom = parseFloat(document.getElementById("Vom").value);
     document.getElementById("Matmengde").value = Math.round(matMengde);
     document.getElementById("Torrfor").value = (Math.round(matMengde) - vom)/2;
+    document.getElementById("Alder").value = Math.round((alder + Number.EPSILON) * 100) / 100;
   }
 
