@@ -5,8 +5,9 @@ inputVekt.addEventListener("keyup", function(event) {
     if (event.key === 'Enter') {
       // Cancel the default action, if needed
       event.preventDefault();
+      add_number();
       // Trigger the button element with a click
-      document.getElementById("clickbtn").click();
+      //document.getElementById("clickbtn").click();
     }
   });
 
@@ -16,7 +17,8 @@ inputVom.addEventListener("keyup", function(event) {
       // Cancel the default action, if needed
       event.preventDefault();
       // Trigger the button element with a click
-      document.getElementById("clickbtn").click();
+      add_number();
+      //document.getElementById("clickbtn").click();
     }
   });
 
