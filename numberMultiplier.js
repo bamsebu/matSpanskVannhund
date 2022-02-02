@@ -8,6 +8,7 @@ inputVekt.addEventListener("keyup", function(event) {
       add_number();
       // Trigger the button element with a click
       //document.getElementById("clickbtn").click();
+      event.target.blur();
     }
   });
 
@@ -19,6 +20,7 @@ inputVom.addEventListener("keyup", function(event) {
       // Trigger the button element with a click
       add_number();
       //document.getElementById("clickbtn").click();
+      event.target.blur();
     }
   });
 
