@@ -3,15 +3,22 @@ body {
 }
 
 div {
-    width: fit-content;
+    box-sizing: border-box;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.055);
-    margin: 10px;
+    margin-top: 10px;
 }
 
 input {
     margin: 5px;
+    border: 1px solid #3e8fbe;
+    border-radius: 8px;
 }
 
 label {
     margin: 5px;
+}
+div.wrapper {
+    width: max-content;
+    margin: auto;
 }

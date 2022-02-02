@@ -11,7 +11,6 @@
         href="https://bamsebu.github.io/matSpanskVannhund/favicons/favicon-16x16.png">
     <link rel="manifest" href="https://bamsebu.github.io/matSpanskVannhund/favicons/site.webmanifest">
 
-    <h1>Matmengde</h1>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,6 +24,8 @@
 </head>
 
 <body>
+    <div class="wrapper">
+    <h1>Matmengde</h1>
     <div>
         <label for="fodselsDato">Fødselsdag:</label>
         <br>
@@ -33,12 +34,12 @@
     <div>
         <label for="Alder">Alder i måneder:</label>
         <br>
-        <input type="number" id="Alder" name="Alder">
+        <input class="numberInput" type="number" id="Alder" name="Alder">
     </div>
     <div>
         <label for="Vektinput">Hundens vekt i kg:</label>
         <br>
-        <input type="number" id="Vektinput" name="Vektinput" min="1" max="50">
+        <input type="number" class="numberInput" id="Vektinput" name="Vektinput">
     </div>
     <div>
 
@@ -49,13 +50,14 @@
     <div>
         <label for="Vom">Angi gitt mengde vom i gram:</label>
         <br>
-        <input type="number" id="Vom" name="Vom" min="1" max="1000" value="250">
+        <input type="number" class="numberInput" id="Vom" name="Vom" value="250">
     </div>
     <div>
         <label for="Torrfor">Mengde tørrfor i gram:</label>
         <br>
         <input type="text" id="Torrfor" name="Torrfor" readonly>
     </div>
+</div>
     <p>
 
     </p>
