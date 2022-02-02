@@ -1,25 +1,18 @@
 var inputVekt = document.getElementById("Vektinput");
 var inputVom = document.getElementById("Vom");
+
 inputVekt.addEventListener("keyup", function (event) {
-    // Number 13 is the "Enter" key on the keyboard
     if (event.key === 'Enter') {
-        // Cancel the default action, if needed
         event.preventDefault();
         add_number();
-        // Trigger the button element with a click
-        //document.getElementById("clickbtn").click();
         event.target.blur();
     }
 });
 
 inputVom.addEventListener("keyup", function (event) {
-    // Number 13 is the "Enter" key on the keyboard
     if (event.key === 'Enter') {
-        // Cancel the default action, if needed
         event.preventDefault();
-        // Trigger the button element with a click
         add_number();
-        //document.getElementById("clickbtn").click();
         event.target.blur();
     }
 });
