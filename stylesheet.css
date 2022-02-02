@@ -3,10 +3,8 @@ body {
 }
 
 div {
-    box-sizing: border-box;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.055);
-    margin-top: 10px;
+    width: auto;
+    margin: auto;
 }
 
 input {
@@ -18,7 +16,18 @@ input {
 label {
     margin: 5px;
 }
+div.inputWrapper{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.034);
+    margin-top: 10px;
+}
 div.wrapper {
     width: max-content;
     margin: auto;
+    background-color: rgba(0, 0, 0, 0.041);
+}
+div.pageWrapper {
+    width:  0%;
+    margin: 0 auto;
 }
