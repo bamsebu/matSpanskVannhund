@@ -6,7 +6,7 @@ var inputAlder = document.getElementById("Alder");
 inputVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        AddNumber();
+        addNumber();
         event.target.blur();
     }
 });
@@ -14,7 +14,7 @@ inputVekt.addEventListener("keyup", function (event) {
 inputVom.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        AddNumber();
+        addNumber();
         event.target.blur();
     }
 });
@@ -22,7 +22,7 @@ inputVom.addEventListener("keyup", function (event) {
 inputProsentAvVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        AddNumber();
+        addNumber();
         event.target.blur();
     }
 });
@@ -30,25 +30,26 @@ inputProsentAvVekt.addEventListener("keyup", function (event) {
 inputAlder.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        SettProsent();
+        settProsent();
         event.target.blur();
     }
 });
 
 window.onload = function () {
-    var alder = Alder();
+    var alder = getAlder();
     var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     document.getElementById("Alder").value = Math.round((alder + Number.EPSILON) * 100) / 100;
-    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100;
+    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
 };
 
-function SettProsent() {
+function settProsent() {
     var alder = parseFloat(document.getElementById("Alder").value);
     var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
+    addNumber();
 }
 
-function Alder() {
+function getAlder() {
     const date = +new Date();
 
     var myBirthDate = document.getElementById("fodselsDato").value;
@@ -60,13 +61,13 @@ function Alder() {
     return alder;
 }
 
-function Prosent() {
-    var alder = Alder();
+function getProsent() {
+    var alder = alder();
     var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     return prosent;
 }
 
-function AddNumber() {
+function addNumber() {
     var vekt = parseFloat(document.getElementById("Vektinput").value);
     var prosent = parseFloat(document.getElementById("ProsentAvVekt").value) / 100;
     var matMengde = vekt * prosent * 1000;
