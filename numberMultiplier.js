@@ -2,6 +2,7 @@ var inputVekt = document.getElementById("Vektinput");
 var inputVom = document.getElementById("Vom");
 var inputProsentAvVekt = document.getElementById("ProsentAvVekt");
 var inputAlder = document.getElementById("Alder");
+
 inputVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -38,7 +39,7 @@ window.onload = function () {
     var alder = Alder();
     var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     document.getElementById("Alder").value = Math.round((alder + Number.EPSILON) * 100) / 100;
-    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
+    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100;
 };
 
 function sett_prosent() {
