@@ -1,6 +1,7 @@
 var inputVekt = document.getElementById("Vektinput");
 var inputVom = document.getElementById("Vom");
-
+var inputProsentAvVekt = document.getElementById("ProsentAvVekt");
+var inputAlder = document.getElementById("Alder");
 inputVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -17,10 +18,34 @@ inputVom.addEventListener("keyup", function (event) {
     }
 });
 
+inputProsentAvVekt.addEventListener("keyup", function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        add_number();
+        event.target.blur();
+    }
+});
+
+inputAlder.addEventListener("keyup", function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        sett_prosent();
+        event.target.blur();
+    }
+});
+
 window.onload = function () {
     var alder = Alder();
+    var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     document.getElementById("Alder").value = Math.round((alder + Number.EPSILON) * 100) / 100;
+    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
 };
+
+function sett_prosent() {
+    var alder = parseFloat(document.getElementById("Alder").value);
+    var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
+    document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
+}
 
 function Alder() {
     const date = +new Date();
@@ -34,11 +59,16 @@ function Alder() {
     return alder;
 }
 
-function add_number() {
-    var first_number = parseFloat(document.getElementById("Vektinput").value);
+function Prosent() {
     var alder = Alder();
-    var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287
-    var matMengde = first_number * prosent * 1000;
+    var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
+    return prosent;
+}
+
+function add_number() {
+    var vekt = parseFloat(document.getElementById("Vektinput").value);
+    var prosent = parseFloat(document.getElementById("ProsentAvVekt").value) / 100;
+    var matMengde = vekt * prosent * 1000;
     var vom = parseFloat(document.getElementById("Vom").value);
     document.getElementById("Matmengde").value = Math.round(matMengde);
     document.getElementById("Torrfor").value = (Math.round(matMengde) - vom) / 2;
