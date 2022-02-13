@@ -6,7 +6,7 @@ var inputAlder = document.getElementById("Alder");
 inputVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        add_number();
+        AddNumber();
         event.target.blur();
     }
 });
@@ -14,7 +14,7 @@ inputVekt.addEventListener("keyup", function (event) {
 inputVom.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        add_number();
+        AddNumber();
         event.target.blur();
     }
 });
@@ -22,7 +22,7 @@ inputVom.addEventListener("keyup", function (event) {
 inputProsentAvVekt.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        add_number();
+        AddNumber();
         event.target.blur();
     }
 });
@@ -30,7 +30,7 @@ inputProsentAvVekt.addEventListener("keyup", function (event) {
 inputAlder.addEventListener("keyup", function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        sett_prosent();
+        SettProsent();
         event.target.blur();
     }
 });
@@ -42,7 +42,7 @@ window.onload = function () {
     document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100;
 };
 
-function sett_prosent() {
+function SettProsent() {
     var alder = parseFloat(document.getElementById("Alder").value);
     var prosent = -0.000002 * alder ** 3 + 0.000158 * alder ** 2 - 0.004219 * alder + 0.061287;
     document.getElementById("ProsentAvVekt").value = Math.round((prosent * 100 + Number.EPSILON) * 100) / 100 + "%";
@@ -66,7 +66,7 @@ function Prosent() {
     return prosent;
 }
 
-function add_number() {
+function AddNumber() {
     var vekt = parseFloat(document.getElementById("Vektinput").value);
     var prosent = parseFloat(document.getElementById("ProsentAvVekt").value) / 100;
     var matMengde = vekt * prosent * 1000;
